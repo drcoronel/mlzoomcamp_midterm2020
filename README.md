@@ -5,3 +5,6 @@ In this repo we will be working with the [**RED WINE QUALITY**](https://archive.
 
 
 
+# Reference
+P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.
+Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.

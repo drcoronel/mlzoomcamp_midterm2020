@@ -8,6 +8,8 @@ numpy = "*"
 sklearn = "*"
 xgboost = "*"
 fastapi = "*"
+gunicorn = "*"
+bentoml = "*"
 
 [dev-packages]
 
