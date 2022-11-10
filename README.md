@@ -249,6 +249,39 @@ The response for the first example looks like this:
 }
 ```
 
+# Cloud Deployment 
+
+The model was deployed using AWS Elastic Container Services 
+
+First, make sure that `aws-cli` is installed.
+
+```bash
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+ln -s /usr/bin/aws aws
+```
+
+1. We need to create a Elastic Container Regestry and push the docker image to it. 
+
+  ```bash
+  aws ecr get-login-password --region {region} | docker login --username AWS --password-stdin {registry_url}
+
+  docker tag {docker_image_tag} {registry_url}/wine_quality_classifier:latest
+
+  docker push {registry_url}/wine_quality_classifier:latest
+  ```
+
+2. We create a cluster in EC service. In this case I used an AWS Fargate Linux cluster.
+
+3. We create a task and assigned the URI from the docker image that we pushed to the registry.
+
+4. We run the task 
+
+5. Test 
+
+
+
 # Reference
 P. Cortez, A. Cerdeira, F. Almeida, T. Matos and J. Reis.
 Modeling wine preferences by data mining from physicochemical properties. In Decision Support Systems, Elsevier, 47(4):547-553, 2009.
