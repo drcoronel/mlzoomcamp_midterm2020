@@ -59,9 +59,10 @@ The train dataset was split in 2 using a 0.25 fraction of it as validation (0.2 
 
 Before using `Pipeline`,the datasets are first converted to vectors using `DictVectorizer`.
 
-The `Pipeline` object contains to steps. 
-    1. Preprocessing: Given the long-tailed distributions of some of the features `RobustScaler` was applied to the feature vectors.
-    2. Classifier: Model that is used and evaluated
+The `Pipeline` object contains to steps:
+
+1. Preprocessing: Given the long-tailed distributions of some of the features `RobustScaler` was applied to the feature vectors.
+2. Classifier: Model that is used and evaluated
 
 ## Evaluation 
 
