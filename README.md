@@ -109,14 +109,14 @@ There are a few thing that you can try out:
 
 ## Using the existing model 
 
-``bash
+```bash
 bentoml models import model/wine_quality_randomforest-ahhbkxtaq26rig2k.bentomodel
 bentoml serve service.py:svc
-``
+```
 The existing model 
 
 ```yaml
-name: wine_quality_randomforest                                                                                                                               
+name: t file, requirements.txt or pwine_quality_randomforest                                                                                                                               
 version: ahhbkxtaq26rig2k                                                                                                                                     
 module: bentoml.sklearn                                                                                                                                       
 labels: {}                                                                                                                                                    
@@ -149,22 +149,24 @@ creation_time: '2022-11-09T23:26:59.052366+00:00'
 
 ## Make your own model  
 
-You can change the model or the hyperparameters used during training using `train.py`
+You can change the model or the hyperparameters used during training using `train.py`.
 
-``bash
+```bash
 python train.py
-``
+```
 After running, in the terminal you'll see the new models tag. Just go and replace it in `service.py` :p 
 
 
 # Deployment using BentoML
 
-``bash 
+```bash 
 bentoml build 
-``
+```
+
 ![](figures/bento_build.png)
 
 Now, we can build a docker image using the following snippet
+
 ```bash
 bentoml containerize wine_quality_classifier:mcye7jtbds6opr5f
 ```
