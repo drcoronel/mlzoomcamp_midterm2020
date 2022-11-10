@@ -1,28 +1,31 @@
-# mlzoomcamp-2022-01-trusting-varahamihira
+# ML-ZOOMCAMP MIDTERM PROJECT 
 
 This is a Midterm project for ML Zoomcamp 2022 
 
 In this repo we will be working with the [**Wine quality dataset **](https://archive.ics.uci.edu/ml/datasets/wine+quality) dataset from UCI center for Machine Learning. 
 
+The goal of this project is to classify the wine quality based on some of their physical and chemical properties. 
 
 
 # Data Description 
 
+The following table provides an overview of the dataset. The available fields and what they were used for, as well as the type of data.  
+
 |Field|Use|Dtype|
 |------|------------|-----|
-type|Feautre| str 
-fixed_acidity|Feautre|float 
-volatile_acidity|Feautre|float 
-citric_acid|Feautre|float 
-residual_sugar|Feautre|float 
-chlorides|Feautre|float 
-free_sulfur_dioxide|Feautre|float 
-total_sulfur_dioxide|Feautre|float 
-density|Feautre|float 
-ph|Feautre|float 
-sulphates|Feautre|float 
-alcohol|Feautre|float 
-Quality|Target|int 
+type|Feature| str 
+fixed_acidity|Feature|float 
+volatile_acidity|Feature|float 
+citric_acid|Feature|float 
+residual_sugar|Feature|float 
+chlorides|Feature|float 
+free_sulfur_dioxide|Feature|float 
+total_sulfur_dioxide|Feature|float 
+density|Feature|float 
+ph|Feature|float 
+sulphates|Feature|float 
+alcohol|Feature|float 
+**Quality**|**Target**|**int** 
 
 ## Data Preparation 
 
@@ -109,14 +112,14 @@ There are a few thing that you can try out:
 
 ## Using the existing model 
 
-``bash
+```bash
 bentoml models import model/wine_quality_randomforest-ahhbkxtaq26rig2k.bentomodel
 bentoml serve service.py:svc
-``
+```
 The existing model 
 
 ```yaml
-name: wine_quality_randomforest                                                                                                                               
+name: t file, requirements.txt or pwine_quality_randomforest                                                                                                                               
 version: ahhbkxtaq26rig2k                                                                                                                                     
 module: bentoml.sklearn                                                                                                                                       
 labels: {}                                                                                                                                                    
@@ -149,22 +152,24 @@ creation_time: '2022-11-09T23:26:59.052366+00:00'
 
 ## Make your own model  
 
-You can change the model or the hyperparameters used during training using `train.py`
+You can change the model or the hyperparameters used during training using `train.py`.
 
-``bash
+```bash
 python train.py
-``
+```
 After running, in the terminal you'll see the new models tag. Just go and replace it in `service.py` :p 
 
 
 # Deployment using BentoML
 
-``bash 
+```bash 
 bentoml build 
-``
+```
+
 ![](figures/bento_build.png)
 
 Now, we can build a docker image using the following snippet
+
 ```bash
 bentoml containerize wine_quality_classifier:mcye7jtbds6opr5f
 ```
