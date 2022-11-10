@@ -280,6 +280,16 @@ ln -s /usr/bin/aws aws
 
 5. Test 
 
+Now the service is deployed in the cloud and the API is exposed
+
+https://user-images.githubusercontent.com/19703830/201196177-c328b026-ea9f-4765-aaa9-dba15d4ded84.mp4
+
+
+Additonally, we could also send a request using curl
+
+https://user-images.githubusercontent.com/19703830/201196206-d38a733f-cf12-4803-9994-3c6a142e8c3d.mp4
+
+
 
 
 # Reference
